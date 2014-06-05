@@ -2,7 +2,6 @@
 
 namespace CL\PHPUnitExtensions\Test;
 
-use CL\PHPUnitExtensions\ConstrainArrayTrait;
 use CL\PHPUnitExtensions\Constraint\ConstrainArray;
 
 /**
@@ -11,16 +10,16 @@ use CL\PHPUnitExtensions\Constraint\ConstrainArray;
  */
 class ConstrainArrayTraitTest extends AbstractTestCase
 {
-    use ConstrainArrayTrait;
-
     /**
      * @covers ::constrainArray
      */
     public function testConstrainArray()
     {
+        $test = new ConstrainArrayTraitTestCase();
+
         $expected = new ConstrainArray(array('test' => $this->equalTo('12')), false);
 
-        $constrint = $this->constrainArray(array('test' => $this->equalTo('12')), false);
+        $constrint = $test->constrainArray(array('test' => $this->equalTo('12')), false);
 
         $this->assertEquals($expected, $constrint);
     }
@@ -30,6 +29,8 @@ class ConstrainArrayTraitTest extends AbstractTestCase
      */
     public function testAssertArrayConstrained()
     {
-        $this->assertArrayConstrained(array('test' => $this->equalTo('12')), array('test' => 12), false);
+        $test = new ConstrainArrayTraitTestCase();
+
+        $test->assertArrayConstrained(array('test' => $this->equalTo('12')), array('test' => 12), false);
     }
 }
