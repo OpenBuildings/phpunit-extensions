@@ -1,0 +1,28 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+  - hhvm
+
+notifications:
+  email: false
+  slack:
+    secure: DwRMUNL6SXQK5E4D3xGOtzT3DaF4Sy1X4Zn+09jiC+NO4y3lhz2Tygjbrzz2ZNL6Pk14SLJ+5sCSXbYYXOIctIieym4nlZfem0ZEWb7Loek3mNsDcJh9tQtydYIBTM5kEXzrr48zCOkylTdW/RkDRiFDDebVjcrLc4rtiy/gXPM=
+
+before_install:
+  - composer selfupdate
+
+install:
+  - composer install
+
+before_script:
+  - mkdir -p build/logs
+
+script:
+  - phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+  - test -e build/logs/clover.xml && wget https://scrutinizer-ci.com/ocular.phar
+  - test -e build/logs/clover.xml && php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
