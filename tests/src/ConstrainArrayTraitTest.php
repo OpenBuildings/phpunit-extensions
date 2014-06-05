@@ -7,6 +7,7 @@ use CL\PHPUnitExtensions\Constraint\ConstrainArray;
 
 /**
  * @coversDefaultClass CL\PHPUnitExtensions\ConstrainArrayTrait
+ * @requires PHP 5.4
  */
 class ConstrainArrayTraitTest extends AbstractTestCase
 {
