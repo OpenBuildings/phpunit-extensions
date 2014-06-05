@@ -80,7 +80,7 @@ class ConstrainArray extends PHPUnit_Framework_Constraint
 
     public function additionalFailureDescription($other)
     {
-        $errors = [];
+        $errors = array();
 
         foreach ($this->constraints as $key => $constraint) {
             if (! array_key_exists($key, $other)) {
