@@ -14,9 +14,9 @@ class Assert
     /**
      * Asserts that a condition is true.
      *
-     * @param  PHPUnit_Framework_Constraint[] $constraints
-     * @param  array                          $array
-     * @param  string                         $message
+     * @param  PHPUnit_Framework_Constraint[]         $constraints
+     * @param  array                                  $array
+     * @param  string                                 $message
      * @throws PHPUnit_Framework_AssertionFailedError
      */
     public static function assertArrayConstrained(array $constraints, array $array, $isStrict = true, $message = '')

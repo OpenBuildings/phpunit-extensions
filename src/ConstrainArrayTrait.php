@@ -2,8 +2,6 @@
 
 namespace CL\PHPUnitExtensions;
 
-use SebastianBergmann\Comparator;
-
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.
@@ -14,7 +12,6 @@ trait ConstrainArrayTrait
     /**
      * Asserts that a condition is true.
      *
-     * @param  boolean $condition
      * @param  string  $message
      * @throws PHPUnit_Framework_AssertionFailedError
      */
