@@ -1,4 +1,4 @@
-Phpunit Extensions
+PHPUnit Extensions
 ==================
 
 [![Build Status](https://travis-ci.org/clippings/phpunit-extensions.png?branch=master)](https://travis-ci.org/clippings/phpunit-extensions)
